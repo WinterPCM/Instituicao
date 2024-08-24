@@ -14,7 +14,6 @@
 
 
         // Relacionamento muitos-para-muitos com Aluno. MAlunos
-        public int AluMatricula { get; set; }
         public List<Aluno> TraAlunos { get; set; } = new List<Aluno>();
 
 
@@ -22,16 +21,5 @@
         public int ?OrtID { get; set; }
         public virtual Orientador ?TraOrientador { get; set; }
 
-
-        // Método para adicionar um autor à lista TraAlunos --------------------
-        public void AdicionarAutor(Aluno autor)
-        {
-            if (autor == null)
-            {
-                throw new ArgumentNullException(nameof(autor), "O autor não pode ser nulo.");
-            }
-
-            TraAlunos.Add(autor);
-        }
     }
 }

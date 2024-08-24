@@ -11,6 +11,5 @@
         // Relacionamento 1-para-muitos com Periodo. MPeriodos
         public List<Periodo> CurPeriodos { get; set; } = new List<Periodo>();
 
-
     }
 }
