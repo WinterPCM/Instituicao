@@ -1,7 +1,12 @@
+using Instituicao.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+var connectionString = builder.Configuration.GetConnectionString("InstituicaoDB");
+builder.Services.AddDbContext<InstituicaoDBContext>(x => x.UseSqlServer(connectionString));
 
 var app = builder.Build();
 
