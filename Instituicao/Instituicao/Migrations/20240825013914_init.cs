@@ -27,6 +27,23 @@ namespace Instituicao.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Professores",
+                columns: table => new
+                {
+                    ProMatricula = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UsuNome = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UsuCPF = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UsuEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UsuTelefone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UsuDN = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Professores", x => x.ProMatricula);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Periodos",
                 columns: table => new
                 {
@@ -48,30 +65,6 @@ namespace Instituicao.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Usuarios",
-                columns: table => new
-                {
-                    UsuMatricula = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UsuNome = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UsuCPF = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UsuEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UsuTelefone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UsuDN = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    TipoUsuario = table.Column<string>(type: "nvarchar(13)", maxLength: 13, nullable: false),
-                    PerID = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Usuarios", x => x.UsuMatricula);
-                    table.ForeignKey(
-                        name: "FK_Usuarios_Periodos_PerID",
-                        column: x => x.PerID,
-                        principalTable: "Periodos",
-                        principalColumn: "PerID");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Disciplinas",
                 columns: table => new
                 {
@@ -85,10 +78,10 @@ namespace Instituicao.Migrations
                 {
                     table.PrimaryKey("PK_Disciplinas", x => x.DisID);
                     table.ForeignKey(
-                        name: "FK_Disciplinas_Usuarios_ProMatricula",
+                        name: "FK_Disciplinas_Professores_ProMatricula",
                         column: x => x.ProMatricula,
-                        principalTable: "Usuarios",
-                        principalColumn: "UsuMatricula");
+                        principalTable: "Professores",
+                        principalColumn: "ProMatricula");
                 });
 
             migrationBuilder.CreateTable(
@@ -103,35 +96,34 @@ namespace Instituicao.Migrations
                 {
                     table.PrimaryKey("PK_Orientadores", x => x.OrtID);
                     table.ForeignKey(
-                        name: "FK_Orientadores_Usuarios_ProMatricula",
+                        name: "FK_Orientadores_Professores_ProMatricula",
                         column: x => x.ProMatricula,
-                        principalTable: "Usuarios",
-                        principalColumn: "UsuMatricula",
+                        principalTable: "Professores",
+                        principalColumn: "ProMatricula",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Dependencia",
+                name: "Alunos",
                 columns: table => new
                 {
-                    AluDependenciasDisID = table.Column<int>(type: "int", nullable: false),
-                    DisDependentesUsuMatricula = table.Column<int>(type: "int", nullable: false)
+                    AluMatricula = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PerID = table.Column<int>(type: "int", nullable: true),
+                    UsuNome = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UsuCPF = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UsuEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UsuTelefone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UsuDN = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Dependencia", x => new { x.AluDependenciasDisID, x.DisDependentesUsuMatricula });
+                    table.PrimaryKey("PK_Alunos", x => x.AluMatricula);
                     table.ForeignKey(
-                        name: "FK_Dependencia_Disciplinas_AluDependenciasDisID",
-                        column: x => x.AluDependenciasDisID,
-                        principalTable: "Disciplinas",
-                        principalColumn: "DisID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Dependencia_Usuarios_DisDependentesUsuMatricula",
-                        column: x => x.DisDependentesUsuMatricula,
-                        principalTable: "Usuarios",
-                        principalColumn: "UsuMatricula",
-                        onDelete: ReferentialAction.Cascade);
+                        name: "FK_Alunos_Periodos_PerID",
+                        column: x => x.PerID,
+                        principalTable: "Periodos",
+                        principalColumn: "PerID");
                 });
 
             migrationBuilder.CreateTable(
@@ -187,38 +179,67 @@ namespace Instituicao.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Dependencia",
+                columns: table => new
+                {
+                    AluDependenciasDisID = table.Column<int>(type: "int", nullable: false),
+                    DisDependentesAluMatricula = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Dependencia", x => new { x.AluDependenciasDisID, x.DisDependentesAluMatricula });
+                    table.ForeignKey(
+                        name: "FK_Dependencia_Alunos_DisDependentesAluMatricula",
+                        column: x => x.DisDependentesAluMatricula,
+                        principalTable: "Alunos",
+                        principalColumn: "AluMatricula",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Dependencia_Disciplinas_AluDependenciasDisID",
+                        column: x => x.AluDependenciasDisID,
+                        principalTable: "Disciplinas",
+                        principalColumn: "DisID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AlunoTrabalho",
                 columns: table => new
                 {
                     AluTrabalhosTraID = table.Column<int>(type: "int", nullable: false),
-                    TraAlunosUsuMatricula = table.Column<int>(type: "int", nullable: false)
+                    TraAlunosAluMatricula = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AlunoTrabalho", x => new { x.AluTrabalhosTraID, x.TraAlunosUsuMatricula });
+                    table.PrimaryKey("PK_AlunoTrabalho", x => new { x.AluTrabalhosTraID, x.TraAlunosAluMatricula });
+                    table.ForeignKey(
+                        name: "FK_AlunoTrabalho_Alunos_TraAlunosAluMatricula",
+                        column: x => x.TraAlunosAluMatricula,
+                        principalTable: "Alunos",
+                        principalColumn: "AluMatricula",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_AlunoTrabalho_Trabalhos_AluTrabalhosTraID",
                         column: x => x.AluTrabalhosTraID,
                         principalTable: "Trabalhos",
                         principalColumn: "TraID",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_AlunoTrabalho_Usuarios_TraAlunosUsuMatricula",
-                        column: x => x.TraAlunosUsuMatricula,
-                        principalTable: "Usuarios",
-                        principalColumn: "UsuMatricula",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_AlunoTrabalho_TraAlunosUsuMatricula",
-                table: "AlunoTrabalho",
-                column: "TraAlunosUsuMatricula");
+                name: "IX_Alunos_PerID",
+                table: "Alunos",
+                column: "PerID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Dependencia_DisDependentesUsuMatricula",
+                name: "IX_AlunoTrabalho_TraAlunosAluMatricula",
+                table: "AlunoTrabalho",
+                column: "TraAlunosAluMatricula");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Dependencia_DisDependentesAluMatricula",
                 table: "Dependencia",
-                column: "DisDependentesUsuMatricula");
+                column: "DisDependentesAluMatricula");
 
             migrationBuilder.CreateIndex(
                 name: "IX_DisciplinaPeriodo_PerDisciplinasDisID",
@@ -250,11 +271,6 @@ namespace Instituicao.Migrations
                 name: "IX_Trabalhos_OrtID",
                 table: "Trabalhos",
                 column: "OrtID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Usuarios_PerID",
-                table: "Usuarios",
-                column: "PerID");
         }
 
         /// <inheritdoc />
@@ -273,16 +289,19 @@ namespace Instituicao.Migrations
                 name: "Trabalhos");
 
             migrationBuilder.DropTable(
+                name: "Alunos");
+
+            migrationBuilder.DropTable(
                 name: "Disciplinas");
 
             migrationBuilder.DropTable(
                 name: "Orientadores");
 
             migrationBuilder.DropTable(
-                name: "Usuarios");
+                name: "Periodos");
 
             migrationBuilder.DropTable(
-                name: "Periodos");
+                name: "Professores");
 
             migrationBuilder.DropTable(
                 name: "Cursos");

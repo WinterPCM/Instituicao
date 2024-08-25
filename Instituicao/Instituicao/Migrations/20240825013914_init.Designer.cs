@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Instituicao.Migrations
 {
     [DbContext(typeof(InstituicaoDBContext))]
-    [Migration("20240825005506_init")]
+    [Migration("20240825013914_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -30,12 +30,12 @@ namespace Instituicao.Migrations
                     b.Property<int>("AluDependenciasDisID")
                         .HasColumnType("int");
 
-                    b.Property<int>("DisDependentesUsuMatricula")
+                    b.Property<int>("DisDependentesAluMatricula")
                         .HasColumnType("int");
 
-                    b.HasKey("AluDependenciasDisID", "DisDependentesUsuMatricula");
+                    b.HasKey("AluDependenciasDisID", "DisDependentesAluMatricula");
 
-                    b.HasIndex("DisDependentesUsuMatricula");
+                    b.HasIndex("DisDependentesAluMatricula");
 
                     b.ToTable("Dependencia", (string)null);
                 });
@@ -45,12 +45,12 @@ namespace Instituicao.Migrations
                     b.Property<int>("AluTrabalhosTraID")
                         .HasColumnType("int");
 
-                    b.Property<int>("TraAlunosUsuMatricula")
+                    b.Property<int>("TraAlunosAluMatricula")
                         .HasColumnType("int");
 
-                    b.HasKey("AluTrabalhosTraID", "TraAlunosUsuMatricula");
+                    b.HasKey("AluTrabalhosTraID", "TraAlunosAluMatricula");
 
-                    b.HasIndex("TraAlunosUsuMatricula");
+                    b.HasIndex("TraAlunosAluMatricula");
 
                     b.ToTable("AlunoTrabalho");
                 });
@@ -68,6 +68,43 @@ namespace Instituicao.Migrations
                     b.HasIndex("PerDisciplinasDisID");
 
                     b.ToTable("DisciplinaPeriodo");
+                });
+
+            modelBuilder.Entity("Instituicao.Models.Aluno", b =>
+                {
+                    b.Property<int>("AluMatricula")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AluMatricula"));
+
+                    b.Property<int?>("PerID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UsuCPF")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UsuDN")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UsuEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UsuNome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UsuTelefone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AluMatricula");
+
+                    b.HasIndex("PerID");
+
+                    b.ToTable("Alunos");
                 });
 
             modelBuilder.Entity("Instituicao.Models.Curso", b =>
@@ -159,6 +196,38 @@ namespace Instituicao.Migrations
                     b.ToTable("Periodos");
                 });
 
+            modelBuilder.Entity("Instituicao.Models.Professor", b =>
+                {
+                    b.Property<int>("ProMatricula")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProMatricula"));
+
+                    b.Property<string>("UsuCPF")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UsuDN")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UsuEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UsuNome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UsuTelefone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ProMatricula");
+
+                    b.ToTable("Professores");
+                });
+
             modelBuilder.Entity("Instituicao.Models.Trabalho", b =>
                 {
                     b.Property<int>("TraID")
@@ -201,47 +270,6 @@ namespace Instituicao.Migrations
                     b.UseTphMappingStrategy();
                 });
 
-            modelBuilder.Entity("Instituicao.Models.Usuario", b =>
-                {
-                    b.Property<int>("UsuMatricula")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UsuMatricula"));
-
-                    b.Property<string>("TipoUsuario")
-                        .IsRequired()
-                        .HasMaxLength(13)
-                        .HasColumnType("nvarchar(13)");
-
-                    b.Property<string>("UsuCPF")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("UsuDN")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UsuEmail")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UsuNome")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UsuTelefone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("UsuMatricula");
-
-                    b.ToTable("Usuarios");
-
-                    b.HasDiscriminator<string>("TipoUsuario").HasValue("Usuario");
-
-                    b.UseTphMappingStrategy();
-                });
-
             modelBuilder.Entity("Instituicao.Models.Artigo", b =>
                 {
                     b.HasBaseType("Instituicao.Models.Trabalho");
@@ -263,25 +291,6 @@ namespace Instituicao.Migrations
                     b.HasDiscriminator().HasValue("TCC");
                 });
 
-            modelBuilder.Entity("Instituicao.Models.Aluno", b =>
-                {
-                    b.HasBaseType("Instituicao.Models.Usuario");
-
-                    b.Property<int?>("PerID")
-                        .HasColumnType("int");
-
-                    b.HasIndex("PerID");
-
-                    b.HasDiscriminator().HasValue("Aluno");
-                });
-
-            modelBuilder.Entity("Instituicao.Models.Professor", b =>
-                {
-                    b.HasBaseType("Instituicao.Models.Usuario");
-
-                    b.HasDiscriminator().HasValue("Professor");
-                });
-
             modelBuilder.Entity("AlunoDisciplina", b =>
                 {
                     b.HasOne("Instituicao.Models.Disciplina", null)
@@ -292,7 +301,7 @@ namespace Instituicao.Migrations
 
                     b.HasOne("Instituicao.Models.Aluno", null)
                         .WithMany()
-                        .HasForeignKey("DisDependentesUsuMatricula")
+                        .HasForeignKey("DisDependentesAluMatricula")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -307,7 +316,7 @@ namespace Instituicao.Migrations
 
                     b.HasOne("Instituicao.Models.Aluno", null)
                         .WithMany()
-                        .HasForeignKey("TraAlunosUsuMatricula")
+                        .HasForeignKey("TraAlunosAluMatricula")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -325,6 +334,15 @@ namespace Instituicao.Migrations
                         .HasForeignKey("PerDisciplinasDisID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Instituicao.Models.Aluno", b =>
+                {
+                    b.HasOne("Instituicao.Models.Periodo", "AluPeriodo")
+                        .WithMany("PerAlunos")
+                        .HasForeignKey("PerID");
+
+                    b.Navigation("AluPeriodo");
                 });
 
             modelBuilder.Entity("Instituicao.Models.Disciplina", b =>
@@ -371,15 +389,6 @@ namespace Instituicao.Migrations
                     b.Navigation("TraDisciplina");
 
                     b.Navigation("TraOrientador");
-                });
-
-            modelBuilder.Entity("Instituicao.Models.Aluno", b =>
-                {
-                    b.HasOne("Instituicao.Models.Periodo", "AluPeriodo")
-                        .WithMany("PerAlunos")
-                        .HasForeignKey("PerID");
-
-                    b.Navigation("AluPeriodo");
                 });
 
             modelBuilder.Entity("Instituicao.Models.Curso", b =>
