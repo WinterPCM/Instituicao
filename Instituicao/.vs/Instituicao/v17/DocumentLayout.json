@@ -3,48 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|c:\\users\\polygon\\documents\\meugit\\instituicao\\instituicao\\instituicao\\controllers\\disciplinascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|solutionrelative:instituicao\\controllers\\disciplinascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|c:\\users\\polygon\\documents\\meugit\\instituicao\\instituicao\\instituicao\\controllers\\periodoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|solutionrelative:instituicao\\controllers\\periodoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|c:\\users\\polygon\\documents\\meugit\\instituicao\\instituicao\\instituicao\\controllers\\orientadorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|solutionrelative:instituicao\\controllers\\orientadorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|c:\\users\\polygon\\documents\\meugit\\instituicao\\instituicao\\instituicao\\controllers\\professorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|solutionrelative:instituicao\\controllers\\professorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|c:\\users\\polygon\\documents\\meugit\\instituicao\\instituicao\\instituicao\\controllers\\alunoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|solutionrelative:instituicao\\controllers\\alunoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|c:\\users\\polygon\\documents\\meugit\\instituicao\\instituicao\\instituicao\\controllers\\cursoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|solutionrelative:instituicao\\controllers\\cursoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|c:\\users\\polygon\\documents\\meugit\\instituicao\\instituicao\\instituicao\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|solutionrelative:instituicao\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Migrations\\20240825013914_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Instituicao\\Migrations\\20240825013914_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|c:\\users\\polygon\\documents\\meugit\\instituicao\\instituicao\\instituicao\\data\\mappings\\mappingconsulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|solutionrelative:instituicao\\data\\mappings\\mappingconsulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|c:\\users\\polygon\\documents\\meugit\\instituicao\\instituicao\\instituicao\\models\\professor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|solutionrelative:instituicao\\models\\professor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|c:\\users\\polygon\\documents\\meugit\\instituicao\\instituicao\\instituicao\\models\\aluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|solutionrelative:instituicao\\models\\aluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|c:\\users\\polygon\\documents\\meugit\\instituicao\\instituicao\\instituicao\\views\\trabalhos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|solutionrelative:instituicao\\views\\trabalhos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7AD5E0F3-8208-4703-B57E-4FE121CDFDF1}|Instituicao\\Instituicao.csproj|c:\\users\\polygon\\documents\\meugit\\instituicao\\instituicao\\instituicao\\data\\instituicaodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,111 +22,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "MappingConsulta.cs",
               "DocumentMoniker": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Data\\Mappings\\MappingConsulta.cs",
               "RelativeDocumentMoniker": "Instituicao\\Data\\Mappings\\MappingConsulta.cs",
               "ToolTip": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Data\\Mappings\\MappingConsulta.cs",
               "RelativeToolTip": "Instituicao\\Data\\Mappings\\MappingConsulta.cs",
-              "ViewState": "AQIAAEwAAAAAAAAAAAAQwE0AAABNAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAE0AAABNAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-24T22:32:23.131Z",
               "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DisciplinasController.cs",
-              "DocumentMoniker": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Controllers\\DisciplinasController.cs",
-              "RelativeDocumentMoniker": "Instituicao\\Controllers\\DisciplinasController.cs",
-              "ToolTip": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Controllers\\DisciplinasController.cs",
-              "RelativeToolTip": "Instituicao\\Controllers\\DisciplinasController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T01:46:13.336Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PeriodosController.cs",
-              "DocumentMoniker": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Controllers\\PeriodosController.cs",
-              "RelativeDocumentMoniker": "Instituicao\\Controllers\\PeriodosController.cs",
-              "ToolTip": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Controllers\\PeriodosController.cs",
-              "RelativeToolTip": "Instituicao\\Controllers\\PeriodosController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T01:43:50.612Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrientadoresController.cs",
-              "DocumentMoniker": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Controllers\\OrientadoresController.cs",
-              "RelativeDocumentMoniker": "Instituicao\\Controllers\\OrientadoresController.cs",
-              "ToolTip": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Controllers\\OrientadoresController.cs",
-              "RelativeToolTip": "Instituicao\\Controllers\\OrientadoresController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T01:43:10.806Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProfessoresController.cs",
-              "DocumentMoniker": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Controllers\\ProfessoresController.cs",
-              "RelativeDocumentMoniker": "Instituicao\\Controllers\\ProfessoresController.cs",
-              "ToolTip": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Controllers\\ProfessoresController.cs",
-              "RelativeToolTip": "Instituicao\\Controllers\\ProfessoresController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T01:42:11.577Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AlunosController.cs",
-              "DocumentMoniker": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Controllers\\AlunosController.cs",
-              "RelativeDocumentMoniker": "Instituicao\\Controllers\\AlunosController.cs",
-              "ToolTip": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Controllers\\AlunosController.cs",
-              "RelativeToolTip": "Instituicao\\Controllers\\AlunosController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T01:41:27.567Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CursosController.cs",
-              "DocumentMoniker": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Controllers\\CursosController.cs",
-              "RelativeDocumentMoniker": "Instituicao\\Controllers\\CursosController.cs",
-              "ToolTip": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Controllers\\CursosController.cs",
-              "RelativeToolTip": "Instituicao\\Controllers\\CursosController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T01:40:29.827Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "20240825013914_init.cs",
-              "DocumentMoniker": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Migrations\\20240825013914_init.cs",
-              "RelativeDocumentMoniker": "Instituicao\\Migrations\\20240825013914_init.cs",
-              "ToolTip": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Migrations\\20240825013914_init.cs",
-              "RelativeToolTip": "Instituicao\\Migrations\\20240825013914_init.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T01:39:14.996Z",
               "EditorCaption": ""
             },
             {
@@ -171,52 +44,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Models\\Usuario.cs",
-              "RelativeDocumentMoniker": "Instituicao\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Models\\Usuario.cs",
-              "RelativeToolTip": "Instituicao\\Models\\Usuario.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T01:31:32.28Z",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Views\\Trabalhos\\Index.cshtml",
+              "RelativeDocumentMoniker": "Instituicao\\Views\\Trabalhos\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Views\\Trabalhos\\Index.cshtml",
+              "RelativeToolTip": "Instituicao\\Views\\Trabalhos\\Index.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-25T02:50:41.404Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Professor.cs",
-              "DocumentMoniker": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Models\\Professor.cs",
-              "RelativeDocumentMoniker": "Instituicao\\Models\\Professor.cs",
-              "ToolTip": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Models\\Professor.cs",
-              "RelativeToolTip": "Instituicao\\Models\\Professor.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T01:31:08.779Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Aluno.cs",
-              "DocumentMoniker": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Models\\Aluno.cs",
-              "RelativeDocumentMoniker": "Instituicao\\Models\\Aluno.cs",
-              "ToolTip": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Models\\Aluno.cs",
-              "RelativeToolTip": "Instituicao\\Models\\Aluno.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T01:30:27.713Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 2,
               "Title": "InstituicaoDBContext.cs",
               "DocumentMoniker": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Data\\InstituicaoDBContext.cs",
               "RelativeDocumentMoniker": "Instituicao\\Data\\InstituicaoDBContext.cs",
               "ToolTip": "C:\\Users\\Polygon\\Documents\\MeuGit\\Instituicao\\Instituicao\\Instituicao\\Data\\InstituicaoDBContext.cs",
               "RelativeToolTip": "Instituicao\\Data\\InstituicaoDBContext.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBMAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T01:28:06.934Z"
+              "WhenOpened": "2024-08-25T02:31:36.155Z"
             }
           ]
         }

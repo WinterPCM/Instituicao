@@ -162,6 +162,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Polygon/Documents/MeuGit/Instituicao/Instituicao/Instituicao/Views/Trabalhos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhYmFsaG9zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Polygon/Documents/MeuGit/Instituicao/Instituicao/Instituicao/Views/Trabalhos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhYmFsaG9zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Polygon/Documents/MeuGit/Instituicao/Instituicao/Instituicao/Views/Trabalhos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhYmFsaG9zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Polygon/Documents/MeuGit/Instituicao/Instituicao/Instituicao/Views/Trabalhos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhYmFsaG9zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Polygon/Documents/MeuGit/Instituicao/Instituicao/Instituicao/Views/Trabalhos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhYmFsaG9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Polygon/Documents/MeuGit/Instituicao/Instituicao/Instituicao/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
