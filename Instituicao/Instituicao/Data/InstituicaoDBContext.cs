@@ -9,7 +9,8 @@ namespace Instituicao.Data
     {
         public InstituicaoDBContext(DbContextOptions<InstituicaoDBContext> options) : base(options) { }
 
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Aluno> Alunos { get; set; }
+        public DbSet<Professor> Professores { get; set; }
         public DbSet<Orientador> Orientadores { get; set; }
 
         public DbSet<Periodo> Periodos { get; set; }

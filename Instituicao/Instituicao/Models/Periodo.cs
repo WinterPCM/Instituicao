@@ -9,7 +9,7 @@
         //**********************************************************************
         // Relacionamento muitos-para-1 com Curso. 1Curso
         public int CurID { get; set; }
-        public virtual Curso PerCurso { get; set; }
+        public virtual Curso ?PerCurso { get; set; }
 
         // Relacionamento 1-para-muitos com Aluno. MAlunos
         public List<Aluno> PerAlunos { get; set; } = new List<Aluno>();

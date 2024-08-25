@@ -8,8 +8,11 @@ namespace Instituicao.Data.Mappings
     {
         public static void ConsultaMapeamento(this ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Usuario>()
-            .HasKey(a => a.UsuMatricula);
+            modelBuilder.Entity<Aluno>()
+            .HasKey(a => a.AluMatricula);
+
+            modelBuilder.Entity<Professor>()
+            .HasKey(a => a.ProMatricula);
 
             modelBuilder.Entity<Orientador>()
             .HasKey(a => a.OrtID);
@@ -30,15 +33,10 @@ namespace Instituicao.Data.Mappings
 
             //Configurações de herança(TPH)
             modelBuilder.Entity<Trabalho>()
-            .HasDiscriminator<string>("Tipo de Trabalho")
+            .HasDiscriminator<string>("TipoTrabalho")
             .HasValue<TCC>("TCC")
             .HasValue<Artigo>("Artigo")
             .HasValue<Outro>("Outro");
-
-            modelBuilder.Entity<Usuario>()
-            .HasDiscriminator<string>("Tipo de Usuario")
-            .HasValue<Aluno>("Aluno")
-            .HasValue<Professor>("Professor");
 
             //ALUNO ------------------------------------------------------------------
             // Configuração para o relacionamento muitos-para-1 Periodo
@@ -63,8 +61,7 @@ namespace Instituicao.Data.Mappings
             modelBuilder.Entity<Periodo>()
                 .HasOne(p => p.PerCurso) // 1Periodo = 1 Curso
                 .WithMany(c => c.CurPeriodos) // 1Curso = *Periodos
-                .HasForeignKey(p => p.CurID) // Periodo tem CurID
-                .IsRequired();
+                .HasForeignKey(p => p.CurID); // Periodo tem CurID
 
             // Configuração para o relacionamento muitos-para-muitos Disciplina
             modelBuilder.Entity<Periodo>()
@@ -76,8 +73,7 @@ namespace Instituicao.Data.Mappings
             modelBuilder.Entity<Orientador>()
                 .HasOne(o => o.OrtProfessor)   //1Orientador = 1Professor
                 .WithOne(p => p.ProOrientador) //1Professor = 1Orientador
-                .HasForeignKey<Orientador>(o => o.ProMatricula) //Orientador tem ProMatricula
-                .IsRequired();
+                .HasForeignKey<Orientador>(o => o.ProMatricula); //Orientador tem ProMatricula
 
             //DISCIPLINA ------------------------------------------------------------------
             // Configuração para o relacionamento de muitos-para-um Professor
