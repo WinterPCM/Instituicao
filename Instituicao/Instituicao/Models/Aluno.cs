@@ -4,6 +4,7 @@ namespace Instituicao.Models
 {
     public class Aluno : Usuario
     {
+        public int AluMatricula { get; set; }
         //************************************************************************************
         // Relacionamento muitos-para-1 com Periodo. 1Periodo
         public int ?PerID { get; set; }
