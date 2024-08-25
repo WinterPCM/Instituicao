@@ -8,7 +8,6 @@
 
 
         // Relacionamento 1-para-1 com Orientador. 1Orientador
-        public int ?OrtID { get; set; }
         public virtual Orientador ?ProOrientador { get; set; }
 
     }

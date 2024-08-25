@@ -30,13 +30,13 @@ namespace Instituicao.Data.Mappings
 
             //Configurações de herança(TPH)
             modelBuilder.Entity<Trabalho>()
-            .HasDiscriminator<string>("Tipo de Trabalho")
+            .HasDiscriminator<string>("TipoTrabalho")
             .HasValue<TCC>("TCC")
             .HasValue<Artigo>("Artigo")
             .HasValue<Outro>("Outro");
 
             modelBuilder.Entity<Usuario>()
-            .HasDiscriminator<string>("Tipo de Usuario")
+            .HasDiscriminator<string>("TipoUsuario")
             .HasValue<Aluno>("Aluno")
             .HasValue<Professor>("Professor");
 
