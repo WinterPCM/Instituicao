@@ -159,9 +159,9 @@ namespace Instituicao.Migrations
                     TraTitulo = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TraValor = table.Column<double>(type: "float", nullable: true),
                     TraNota = table.Column<double>(type: "float", nullable: true),
+                    TipoTrabalho = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: false),
                     DisID = table.Column<int>(type: "int", nullable: true),
-                    OrtID = table.Column<int>(type: "int", nullable: true),
-                    TipoTrabalho = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: false)
+                    OrtID = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {

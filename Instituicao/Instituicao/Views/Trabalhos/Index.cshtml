@@ -27,33 +27,40 @@
             <th>
                 @Html.DisplayNameFor(model => model.TraOrientador)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoTrabalho)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TraTitulo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TraValor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TraNota)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TraDisciplina.DisID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TraOrientador.OrtID)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.TraID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TraID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TraID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TraTitulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TraValor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TraNota)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TraDisciplina.DisID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TraOrientador.OrtID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoTrabalho)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.TraID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.TraID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.TraID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

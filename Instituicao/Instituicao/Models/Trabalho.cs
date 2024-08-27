@@ -7,6 +7,9 @@
         public double ?TraValor { get; set; }
         public double ?TraNota { get; set; }
 
+        // Propriedade para o Discriminator
+        public string TipoTrabalho { get; set; }
+
         //***************************************************************
         // Relacionamento muitos-para-1 com Disciplina. 1Disciplina
         public int ?DisID { get; set; }
