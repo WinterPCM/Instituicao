@@ -59,18 +59,60 @@ namespace Instituicao.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TraID,TraTitulo,TraValor,TraNota,DisID,OrtID")] Trabalho trabalho)
+        public async Task<IActionResult> Create(TrabalhoViewModel model)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(trabalho);
+                Trabalho novoTrabalho;
+                switch (model.TipoTrabalho)
+                {
+                    case "TCC":
+                        novoTrabalho = new TCC
+                        {
+                            TraID = model.TraID,
+                            TraTitulo = model.TraTitulo,
+                            TraValor = model.TraValor,
+                            TraNota = model.TraNota,
+                            DisID = model.DisID,
+                            OrtID = model.OrtID
+                        };
+                        break;
+                    case "Artigo":
+                        novoTrabalho = new Artigo
+                        {
+                            TraID = model.TraID,
+                            TraTitulo = model.TraTitulo,
+                            TraValor = model.TraValor,
+                            TraNota = model.TraNota,
+                            DisID = model.DisID,
+                            OrtID = model.OrtID
+                        };
+                        break;
+                    case "Outro":
+                        novoTrabalho = new Outro
+                        {
+                            TraID = model.TraID,
+                            TraTitulo = model.TraTitulo,
+                            TraValor = model.TraValor,
+                            TraNota = model.TraNota,
+                            DisID = model.DisID,
+                            OrtID = model.OrtID
+                        };
+                        break;
+                    default:
+                        return View(model);
+                }
+
+                _context.Add(novoTrabalho);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DisID"] = new SelectList(_context.Disciplinas, "DisID", "DisID", trabalho.DisID);
-            ViewData["OrtID"] = new SelectList(_context.Orientadores, "OrtID", "OrtID", trabalho.OrtID);
-            return View(trabalho);
+
+            ViewData["DisID"] = new SelectList(_context.Disciplinas, "DisID", "DisID", model.DisID);
+            ViewData["OrtID"] = new SelectList(_context.Orientadores, "OrtID", "OrtID", model.OrtID);
+            return View(model);
         }
+
 
         // GET: Trabalhos/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -80,24 +122,39 @@ namespace Instituicao.Controllers
                 return NotFound();
             }
 
+            // Buscar o trabalho no banco de dados
             var trabalho = await _context.Trabalhos.FindAsync(id);
             if (trabalho == null)
             {
                 return NotFound();
             }
-            ViewData["DisID"] = new SelectList(_context.Disciplinas, "DisID", "DisID", trabalho.DisID);
-            ViewData["OrtID"] = new SelectList(_context.Orientadores, "OrtID", "OrtID", trabalho.OrtID);
-            return View(trabalho);
+
+            // Converter a entidade `Trabalho` para `TrabalhoViewModel`
+            var model = new TrabalhoViewModel
+            {
+                TraID = trabalho.TraID,
+                TraTitulo = trabalho.TraTitulo,
+                TraValor = trabalho.TraValor,
+                TraNota = trabalho.TraNota,
+                TipoTrabalho = trabalho.GetType().Name,
+                DisID = trabalho.DisID ?? 0,  // Converter nullable para int
+                OrtID = trabalho.OrtID ?? 0   // Converter nullable para int
+            };
+
+            // Preencher os dados para dropdowns
+            ViewData["DisID"] = new SelectList(_context.Disciplinas, "DisID", "DisID", model.DisID);
+            ViewData["OrtID"] = new SelectList(_context.Orientadores, "OrtID", "OrtID", model.OrtID);
+
+            // Retornar a View com o ViewModel
+            return View(model);
         }
 
         // POST: Trabalhos/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TraID,TraTitulo,TraValor,TraNota,DisID,OrtID")] Trabalho trabalho)
+        public async Task<IActionResult> Edit(int id, TrabalhoViewModel model)
         {
-            if (id != trabalho.TraID)
+            if (id != model.TraID)
             {
                 return NotFound();
             }
@@ -106,12 +163,28 @@ namespace Instituicao.Controllers
             {
                 try
                 {
+                    // Buscar o trabalho original no banco de dados
+                    var trabalho = await _context.Trabalhos.FindAsync(id);
+
+                    if (trabalho == null)
+                    {
+                        return NotFound();
+                    }
+
+                    // Atualizar as propriedades do trabalho
+                    trabalho.TraTitulo = model.TraTitulo;
+                    trabalho.TraValor = model.TraValor;
+                    trabalho.TraNota = model.TraNota;
+                    trabalho.DisID = model.DisID;
+                    trabalho.OrtID = model.OrtID;
+
+                    // Salvar as alterações
                     _context.Update(trabalho);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TrabalhoExists(trabalho.TraID))
+                     if (!TrabalhoExists1(model.TraID))
                     {
                         return NotFound();
                     }
@@ -122,9 +195,17 @@ namespace Instituicao.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DisID"] = new SelectList(_context.Disciplinas, "DisID", "DisID", trabalho.DisID);
-            ViewData["OrtID"] = new SelectList(_context.Orientadores, "OrtID", "OrtID", trabalho.OrtID);
-            return View(trabalho);
+
+            // Preencher os dados para dropdowns em caso de erro
+            ViewData["DisID"] = new SelectList(_context.Disciplinas, "DisID", "DisID", model.DisID);
+            ViewData["OrtID"] = new SelectList(_context.Orientadores, "OrtID", "OrtID", model.OrtID);
+
+            return View(model);
+        }
+
+        private bool TrabalhoExists1(int id)
+        {
+            return _context.Trabalhos.Any(e => e.TraID == id);
         }
 
         // GET: Trabalhos/Delete/5
@@ -162,7 +243,7 @@ namespace Instituicao.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TrabalhoExists(int id)
+        private bool TrabalhoExists2(int id)
         {
             return _context.Trabalhos.Any(e => e.TraID == id);
         }
