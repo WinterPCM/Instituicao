@@ -113,20 +113,6 @@ namespace Instituicao.Controllers
             return View(model);
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Create([Bind("TraID,TraTitulo,TraValor,TraNota,DisID,OrtID")] Trabalho trabalho)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        _context.Add(trabalho);
-        //        await _context.SaveChangesAsync();
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    ViewData["DisID"] = new SelectList(_context.Disciplinas, "DisID", "DisID", trabalho.DisID);
-        //    ViewData["OrtID"] = new SelectList(_context.Orientadores, "OrtID", "OrtID", trabalho.OrtID);
-        //    return View(trabalho);
-        //}
 
         // GET: Trabalhos/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -221,62 +207,6 @@ namespace Instituicao.Controllers
         {
             return _context.Trabalhos.Any(e => e.TraID == id);
         }
-
-
-        //// GET: Trabalhos/Edit/5
-        //public async Task<IActionResult> Edit(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var trabalho = await _context.Trabalhos.FindAsync(id);
-        //    if (trabalho == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    ViewData["DisID"] = new SelectList(_context.Disciplinas, "DisID", "DisID", trabalho.DisID);
-        //    ViewData["OrtID"] = new SelectList(_context.Orientadores, "OrtID", "OrtID", trabalho.OrtID);
-        //    return View(trabalho);
-        //}
-
-        //// POST: Trabalhos/Edit/5
-        //// To protect from overposting attacks, enable the specific properties you want to bind to.
-        //// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Edit(int id, [Bind("TraID,TraTitulo,TraValor,TraNota,DisID,OrtID")] Trabalho trabalho)
-        //{
-        //    if (id != trabalho.TraID)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            _context.Update(trabalho);
-        //            await _context.SaveChangesAsync();
-        //        }
-        //        catch (DbUpdateConcurrencyException)
-        //        {
-        //            if (!TrabalhoExists(trabalho.TraID))
-        //            {
-        //                return NotFound();
-        //            }
-        //            else
-        //            {
-        //                throw;
-        //            }
-        //        }
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    ViewData["DisID"] = new SelectList(_context.Disciplinas, "DisID", "DisID", trabalho.DisID);
-        //    ViewData["OrtID"] = new SelectList(_context.Orientadores, "OrtID", "OrtID", trabalho.OrtID);
-        //    return View(trabalho);
-        //}
 
         // GET: Trabalhos/Delete/5
         public async Task<IActionResult> Delete(int? id)
